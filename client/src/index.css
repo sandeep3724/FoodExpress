@@ -1,0 +1,145 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ROOT THEME */
+:root {
+  --gold: #c9922a;
+  --gold-soft: rgba(201, 146, 42, 0.2);
+  --bg-dark: #060408;
+  --bg-gradient: radial-gradient(ellipse at top, #1b0e30 0%, #0a060f 45%, #060408 100%);
+  --text-main: #f5e6c8;
+  --text-sub: rgba(245, 230, 200, 0.5);
+}
+
+/* BODY */
+body {
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* BUTTONS */
+button {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(201, 146, 42, 0.25);
+}
+
+/* INPUTS */
+input,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+
+/* IMAGES */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* SCROLLBAR (🔥 premium touch) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a060f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 10px;
+}
+
+/* LOADER */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* FADE ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOOD PAGE RESPONSIVE */
+@media (max-width: 900px) {
+  .foods-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* NAVBAR MOBILE FIX */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block !important;
+  }
+}
+
+/* PRINT (INVOICE) */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #invoice-section,
+  #invoice-section * {
+    visibility: visible;
+  }
+
+  #invoice-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    color: #000;
+    padding: 24px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: all 0.3s ease;
+}
