@@ -7,6 +7,7 @@ const authRoutes = require("./src/routes/authRoutes");
 const restaurantRoutes = require("./src/routes/restaurantRoutes");
 const foodRoutes = require("./src/routes/foodRoutes");
 const orderRoutes = require("./src/routes/orderRoutes");
+const couponRoutes = require("./src/routes/coupon");
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/restaurants", restaurantRoutes);
 app.use("/api/foods", foodRoutes);
 app.use("/api/orders", orderRoutes);
-app.use("/api", require("./routes/coupon"));
+app.use("/api/coupon", couponRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running...");
